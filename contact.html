@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Vincent</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="index.html" class="logo">Vincent</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="contact-section">
+  <div class="container">
+    <h2>Get In Touch</h2>
+
+    <form class="contact-form">
+      <label>Name</label>
+      <input type="text" required>
+
+      <label>Email</label>
+      <input type="email" required>
+
+      <label>Subject</label>
+      <select>
+        <option>Collaboration</option>
+        <option>Job Opportunity</option>
+      </select>
+
+      <label>Message</label>
+      <textarea required></textarea>
+
+      <button class="btn">Send</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; <span id="year"></span> Vincent Gichana Ogochi</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

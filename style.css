@@ -1,0 +1,198 @@
+/* === 1. RESET === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === 2. VARIABLES === */
+:root {
+  --clr-primary:  #0F172A;
+  --clr-accent:   #22C55E;
+  --clr-text:     #111827;
+  --clr-muted:    #6B7280;
+  --clr-bg:       #F9FAFB;
+  --clr-white:    #FFFFFF;
+  --clr-border:   #E5E7EB;
+  --radius:       14px;
+  --shadow:       0 6px 20px rgba(0,0,0,0.08);
+  --max-width:    1100px;
+}
+
+/* === 3. TYPOGRAPHY === */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--clr-text);
+  background: var(--clr-bg);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { margin-bottom: 1rem; }
+a  { color: var(--clr-primary); text-decoration: none; }
+
+/* === 4. LAYOUT === */
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+/* === 5. HEADER === */
+header {
+  background: var(--clr-primary);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--clr-accent);
+}
+
+/* === 6. HERO === */
+.hero {
+  background: linear-gradient(135deg, #0F172A, #1E293B);
+  color: white;
+  text-align: center;
+  padding: 7rem 1.5rem;
+}
+
+.hero .accent {
+  color: var(--clr-accent);
+}
+
+.hero p {
+  max-width: 500px;
+  margin: 1rem auto;
+}
+
+/* === 7. BUTTONS === */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: var(--clr-accent);
+  color: #022c22;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+/* === 8. CARDS === */
+.projects-section {
+  padding: 4rem 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card-tag {
+  font-size: 0.7rem;
+  background: #DCFCE7;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.card p {
+  color: var(--clr-muted);
+  margin: 0.5rem 0;
+}
+
+/* === 9. FOOTER === */
+footer {
+  background: var(--clr-primary);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+/* === 13. RESPONSIVE MEDIA QUERIES === */
+
+/* Tablet and above — 768px+ */
+@media (min-width: 768px) {
+  .about-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .hero { padding: 8rem 1.5rem; }
+}
+
+/* Desktop — 1024px+ */
+@media (min-width: 1024px) {
+  .cards   { grid-template-columns: repeat(3, 1fr); }
+  .hero h1 { font-size: 4rem; }
+}
+
+/* Mobile only */
+@media (max-width: 599px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero  { padding: 3.5rem 1rem; }
+  .contact-form { padding: 1.5rem; }
+}
+
+/* Print */
+@media print {
+  header, footer, .btn, .hero-btns { display: none; }
+  body { font-size: 12pt; color: black; background: white; }
+}
